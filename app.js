@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes');
 var users = require('./routes/user');
+var contacto = require('./routes/contacto');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(app.router);
 
 app.get('/', routes.index);
 app.get('/users', users.list);
+app.get('/contacto', contacto.list);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
